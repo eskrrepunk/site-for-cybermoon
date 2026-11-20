@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="./images/logo.jpg">
+    <title>CYBER MOON — Киберспортивный клуб в Киришах</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#070812] text-gray-100 font-manrope">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 navbar-glass">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+                <a href="#" class="flex items-center space-x-3 shrink-0">
+<div class="h-11 w-11 rounded-lg neon-border bg-gradient-to-br from-purple-900/80 via-[#0d0f24] to-pink-900/60 flex items-center justify-center shrink-0">
+    <svg class="w-6 h-6 text-purple-300 drop-shadow-[0_0_8px_rgba(168,85,247,0.9)]" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        <circle cx="17.5" cy="5.5" r="1"/>
+        <circle cx="20" cy="8.5" r="0.7"/>
+    </svg>
+</div>
+                    <span class="text-lg xl:text-xl font-unbounded font-bold neon-text whitespace-nowrap">CYBER MOON</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-6 xl:space-x-8 ml-6">
+                    <a href="#about" class="nav-link whitespace-nowrap">О клубе</a>
+                    <a href="#hardware" class="nav-link whitespace-nowrap">Железо</a>
+                    <a href="#pricing" class="nav-link whitespace-nowrap">Тарифы</a>
+                    <a href="#tournaments" class="nav-link whitespace-nowrap">Турниры</a>
+                    <a href="#contacts" class="nav-link whitespace-nowrap">Контакты</a>
+                    <button class="neon-button whitespace-nowrap" onclick="openBookingModal()">Забронировать ПК</button>
+                </div>
+                <button class="lg:hidden neon-button-small" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-3 navbar-glass-mobile">
+                <a href="#about" class="mobile-nav-link">О клубе</a>
+                <a href="#hardware" class="mobile-nav-link">Железо</a>
+                <a href="#pricing" class="mobile-nav-link">Тарифы</a>
+                <a href="#tournaments" class="mobile-nav-link">Турниры</a>
+                <a href="#contacts" class="mobile-nav-link">Контакты</a>
+                <button class="neon-button w-full mt-4" onclick="openBookingModal()">Забронировать ПК</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-5xl mx-auto text-center">
+                <h1 class="text-5xl sm:text-6xl lg:text-8xl font-unbounded font-black mb-6 hero-title animate-fade-in">CYBER MOON</h1>
+                <div class="h-1 w-32 mx-auto mb-8 neon-line"></div>
+                <p class="text-xl sm:text-2xl lg:text-3xl font-unbounded font-light mb-4 animate-fade-in-delay">ТЕРРИТОРИЯ КИБЕРСПОРТА В КИРИШАХ</p>
+                <p class="text-base sm:text-lg lg:text-xl text-gray-300 mb-12 max-w-3xl mx-auto animate-fade-in-delay-2">Погрузитесь в мир игр на топовом железе RTX 4080 с мониторами 240Hz. Профессиональная периферия, атмосфера настоящего киберспорта и легендарные турниры.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-delay-3">
+                    <button class="neon-button-large" onclick="openBookingModal()">Забронировать место</button>
+                    <a href="#pricing" class="neon-button-large-secondary">Смотреть тарифы</a>
+                </div>
+            </div>
+        </div>
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">О клубе</h2>
+                <p class="section-subtitle">Место, где рождаются чемпионы</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <div class="glass-card"><div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center neon-glow">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-unbounded font-bold mb-4">Топовое железо</h3>
+                    <p class="text-gray-300">RTX 4080, Intel i9, 240Hz мониторы — всё для максимального FPS</p>
+                </div></div>
+                <div class="glass-card"><div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center neon-glow">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-unbounded font-bold mb-4">Киберспорт</h3>
+                    <p class="text-gray-300">Турниры по Dota 2 и CS2 с призовыми фондами и трансляциями</p>
+                </div></div>
+                <div class="glass-card"><div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center neon-glow">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-unbounded font-bold mb-4">24/7</h3>
+                    <p class="text-gray-300">Работаем круглосуточно — играй когда удобно, ночные пакеты со скидкой</p>
+                </div></div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Hardware Section -->
+    <section id="hardware" class="py-20 relative bg-gradient-to-b from-transparent to-[#0a0f1f]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Железо и залы</h2>
+                <p class="section-subtitle">Профессиональное оборудование для побед</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="glass-card-hardware">
+                    <div class="mb-6">
+                        <h3 class="text-3xl font-unbounded font-bold mb-2 neon-text-purple">Standard Zone</h3>
+                        <p class="text-purple-300">Для рейтинговых игр и стримов</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="hardware-item"><span class="hardware-label">Процессор</span><span class="hardware-value">Intel Core i7-13700K</span></div>
+                        <div class="hardware-item"><span class="hardware-label">Видеокарта</span><span class="hardware-value">NVIDIA RTX 4070 Ti 12GB</span></div>
+                        <div class="hardware-item"><span class="hardware-label">Оперативная память</span><span class="hardware-value">32GB DDR5 6000MHz</span></div>
+                        <div class="hardware-item"><span class="hardware-label">Монитор</span><span class="hardware-value">27" 240Hz 1ms IPS</span></div>
+                        <div class="hardware-item"><span class="hardware-label">Периферия</span><span class="hardware-value">Razer DeathAdder V3</span></div>
+                        <div class="hardware-item"><span class="hardware-label">Гарнитура</span><span class="hardware-value">HyperX Cloud Alpha</span></div>
+                    </div>
+                </div>
+                <div class="glass-card-hardware-vip">
+                    <div class="mb-6">
+                        <div class="inline-block px-4 py-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full text-sm font-bold mb-3">⚡ VIP</div>
+                        <h3 class="text-3xl font-unbounded font-bold mb-2 neon-text-pink">VIP Bootcamp</h3>
+                        <p class="text-pink-300">Максимальная производительность</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="hardware-item"><span class="hardware-label">Процессор</span><span class="hardware-value">Intel Core i9-14900K</span></div>
+                        <div class="hardware-item"><span class="hardware-label">Видеокарта</span><span class="hardware-value">NVIDIA RTX 4080 SUPER 16GB</span></div>
+                        <div class="hardware-item"><span class="hardware-label">Оперативная память</span><span class="hardware-value">64GB DDR5 6400MHz</span></div>
+                        <div class="hardware-item"><span class="hardware-label">Монитор</span><span class="hardware-value">32" 240Hz 0.5ms OLED</span></div>
+                        <div class="hardware-item"><span class="hardware-label">Периферия</span><span class="hardware-value">Logitech G Pro Superlight 2</span></div>
+                        <div class="hardware-item"><span class="hardware-label">Гарнитура</span><span class="hardware-value">SteelSeries Arctis Nova Pro</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Тарифы и пакеты</h2>
+                <p class="section-subtitle">Выбери подходящий вариант</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="tab-button active" data-tab="weekday" onclick="switchTab('weekday')">Будни</button>
+                <button class="tab-button" data-tab="weekend" onclick="switchTab('weekend')">Выходные</button>
+                <button class="tab-button" data-tab="night" onclick="switchTab('night')">Ночные пакеты</button>
+            </div>
+            <div id="pricing-content">
+                <div class="pricing-tab active" data-tab-content="weekday">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                        <div class="pricing-card"><h3 class="pricing-title">1 час</h3><div class="pricing-price">150₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">200₽ VIP</p></div>
+                        <div class="pricing-card"><h3 class="pricing-title">3 часа</h3><div class="pricing-price">400₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">550₽ VIP</p></div>
+                        <div class="pricing-card pricing-card-popular"><div class="popular-badge">Популярно</div><h3 class="pricing-title">5 часов</h3><div class="pricing-price">650₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">900₽ VIP</p></div>
+                        <div class="pricing-card"><h3 class="pricing-title">Весь день</h3><div class="pricing-price">1200₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">1700₽ VIP</p></div>
+                    </div>
+                </div>
+                <div class="pricing-tab" data-tab-content="weekend">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                        <div class="pricing-card"><h3 class="pricing-title">1 час</h3><div class="pricing-price">180₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">230₽ VIP</p></div>
+                        <div class="pricing-card"><h3 class="pricing-title">3 часа</h3><div class="pricing-price">480₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">650₽ VIP</p></div>
+                        <div class="pricing-card pricing-card-popular"><div class="popular-badge">Популярно</div><h3 class="pricing-title">5 часов</h3><div class="pricing-price">750₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">1050₽ VIP</p></div>
+                        <div class="pricing-card"><h3 class="pricing-title">Весь день</h3><div class="pricing-price">1400₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">1900₽ VIP</p></div>
+                    </div>
+                </div>
+                <div class="pricing-tab" data-tab-content="night">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                        <div class="pricing-card"><h3 class="pricing-title">Ночь</h3><p class="text-sm text-purple-300 mb-4">00:00 — 08:00</p><div class="pricing-price">800₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">1100₽ VIP</p></div>
+                        <div class="pricing-card pricing-card-popular"><div class="popular-badge">Лучшая цена</div><h3 class="pricing-title">Ночь + утро</h3><p class="text-sm text-purple-300 mb-4">00:00 — 12:00</p><div class="pricing-price">1200₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">1600₽ VIP</p></div>
+                        <div class="pricing-card"><h3 class="pricing-title">Сутки</h3><p class="text-sm text-purple-300 mb-4">24 часа</p><div class="pricing-price">1800₽</div><p class="pricing-zone">Standard Zone</p><div class="pricing-divider"></div><p class="pricing-zone-vip">2500₽ VIP</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12"><button class="neon-button-large" onclick="openBookingModal()">Забронировать сейчас</button></div>
+        </div>
+    </section>
+
+
+
+    <!-- Tournaments Section -->
+    <section id="tournaments" class="py-20 relative bg-gradient-to-b from-[#0a0f1f] to-transparent">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">CYBER MOON LOBBY</h2>
+                <p class="section-subtitle">Турниры и киберспортивные события</p>
+            </div>
+            <div class="max-w-6xl mx-auto"><div class="glass-card-tournament"><div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="inline-block px-4 py-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-sm font-bold mb-4">🏆 Еженедельно</div>
+                    <h3 class="text-3xl lg:text-4xl font-unbounded font-bold mb-6 neon-text">Локальные турниры</h3>
+                    <p class="text-lg text-gray-300 mb-6">Каждые выходные проводим турниры по Dota 2 и CS2 с призовыми фондами до 50 000₽. Профессиональная трансляция, комментаторы и незабываемая атмосфера.</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start space-x-3"><div class="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center flex-shrink-0 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div><div><p class="font-semibold">Dota 2 — формат 5v5</p><p class="text-sm text-gray-400">Single Elimination, Best of 3</p></div></div>
+                        <div class="flex items-start space-x-3"><div class="w-6 h-6 rounded-full bg-pink-500 flex items-center justify-center flex-shrink-0 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div><div><p class="font-semibold">CS2 — формат 5v5</p><p class="text-sm text-gray-400">Double Elimination, BO3 финал</p></div></div>
+                        <div class="flex items-start space-x-3"><div class="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center flex-shrink-0 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div><div><p class="font-semibold">Призовой фонд и мерч</p><p class="text-sm text-gray-400">Денежные призы, эксклюзивный мерч клуба</p></div></div>
+                    </div>
+                    <button class="neon-button-large">Зарегистрировать команду</button>
+                </div>
+                <div class="order-1 lg:order-2"><div class="tournament-image-wrapper"><img src="./images/tournament.jpg" alt="Турнир CYBER MOON" class="tournament-image"></div></div>
+            </div></div></div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Галерея</h2>
+                <p class="section-subtitle">Атмосфера клуба</p>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+                <div class="gallery-item"><img src="./images/club-1.jpg" alt="CYBER MOON интерьер" class="gallery-image"></div>
+                <div class="gallery-item"><img src="./images/club-2.jpg" alt="Игровые места" class="gallery-image"></div>
+                <div class="gallery-item"><img src="./images/club-3.jpg" alt="VIP зона" class="gallery-image"></div>
+                <div class="gallery-item"><img src="./images/club-4.jpg" alt="Турниры" class="gallery-image"></div>
+            </div>
+        </div>
+</section>
+   
+ 
+
+
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="booking-modal">
+        <div class="modal-container">
+            <div class="modal-content">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-3xl font-unbounded font-bold neon-text">Забронировать ПК</h2>
+                    <button onclick="closeBookingModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                </div>
+                <form id="booking-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-300">Имя</label>
+                        <input type="text" name="name" placeholder="Твоё имя" required class="modal-input">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-300">Контакт (Telegram/VK)</label>
+                        <input type="text" name="contact" placeholder="@username или номер" required class="modal-input">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-300">Зона</label>
+                        <select name="zone" required class="modal-input">
+                            <option value="">Выбери зону</option>
+                            <option value="standard">Standard Zone</option>
+                            <option value="vip">VIP Bootcamp</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-300">Время</label>
+                        <select name="hours" required class="modal-input">
+                            <option value="">Выбери время</option>
+                            <option value="1hour">1 час</option>
+                            <option value="3hours">3 часа</option>
+                            <option value="5hours">5 часов</option>
+                            <option value="allday">Весь день</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="neon-button-large w-full">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contacts & Booking Section -->
+    <section id="contacts" class="py-20 relative bg-gradient-to-b from-transparent to-[#0a0f1f]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Контакты и бронь</h2>
+                <p class="section-subtitle">Найди нас в Киришах</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Contacts Info -->
+                <div class="glass-card">
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-unbounded font-bold mb-4 neon-text">Адрес клуба</h3>
+                            <p class="text-lg text-gray-300">г. Кириши, ул. Советская, д. 45</p>
+                            <p class="text-sm text-gray-400 mt-2">2-й этаж 🌙</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-unbounded font-bold mb-4 neon-text">Режим работы</h3>
+                            <div class="space-y-2">
+                                <p class="text-gray-300"><span class="text-purple-400 font-semibold">Пн–Пт:</span> 12:00 – 02:00</p>
+                                <p class="text-gray-300"><span class="text-pink-400 font-semibold">Сб–Вс:</span> 10:00 – 04:00</p>
+                                <p class="text-gray-300"><span class="text-purple-400 font-semibold">Ночные:</span> 00:00 – 08:00</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="https://vk.ru/cyber.moon" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-6 py-3 bg-blue-600 rounded-lg font-semibold hover:bg-blue-700 transition-all">
+                                <span>Группа ВКонтакте</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Booking Form -->
+                <div class="glass-card">
+                    <h3 class="text-2xl font-unbounded font-bold mb-6 neon-text">Быстрая бронь ПК</h3>
+                    <form onsubmit="event.preventDefault(); alert('Заявка принята! Администратор CYBER MOON свяжется с вами в ближайшее время.'); this.reset();" class="space-y-4">
+    <input type="text" placeholder="Твоё имя" required class="modal-input w-full">
+    <input type="tel" placeholder="Телефон" required class="modal-input w-full">
+    <select required class="modal-input w-full">
+        <option value="">Выбери зону</option>
+        <option value="standard">Standard Zone (150₽/час)</option>
+        <option value="vip">VIP Bootcamp (200₽/час)</option>
+    </select>
+    <input type="datetime-local" required class="modal-input w-full">
+    <button type="submit" class="neon-button-large w-full mt-6">Забронировать</button>
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Footer -->
+    <footer class="py-12 border-t border-purple-500 border-opacity-20 bg-gradient-to-t from-[#070812] to-transparent">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <img src="./images/logo.jpg" alt="CYBER MOON" class="h-12 w-12 rounded-lg neon-border">
+                            <span class="text-xl font-unbounded font-bold neon-text">CYBER MOON</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">Киберспортивный клуб в Киришах. Топовое железо, турниры и победы.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-unbounded font-bold mb-4 neon-text">Навигация</h4>
+                        <nav class="flex flex-col space-y-2">
+                            <a href="#about" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">О клубе</a>
+                            <a href="#hardware" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Железо</a>
+                            <a href="#pricing" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Тарифы</a>
+                            <a href="#tournaments" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Турниры</a>
+                            <a href="#gallery" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Галерея</a>
+                            <a href="#contacts" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Контакты</a>
+                        </nav>
+                    </div>
+                    <div>
+                        <h4 class="font-unbounded font-bold mb-4 neon-text">Контакты</h4>
+                        <div class="space-y-2">
+                            <p class="text-gray-400 text-sm">📍 г. Кириши, ул. Советская, 45</p>
+                            <p class="text-gray-400 text-sm">🌙 Пн–Пт: 12:00 – 02:00</p>
+                            <p class="text-gray-400 text-sm">⭐ Сб–Вс: 10:00 – 04:00</p>
+                            <a href="https://vk.ru/cyber.moon" target="_blank" rel="noopener noreferrer" class="inline-block mt-3 text-blue-400 hover:text-blue-300 font-semibold transition-colors">↗ ВКонтакте</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-20 mb-8"></div>
+                <div class="text-center text-gray-500 text-sm">
+                    <p>© 2026 CYBER MOON. Территория киберспорта в Киришах. 🌙</p>
+                    <p class="mt-2 text-xs text-gray-500">
+    Разработка сайта: <a href="https://t.me/eshkrrepunkФ" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 transition-colors">@eshkrrepunk</a>
+</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
